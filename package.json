@@ -4,7 +4,7 @@
   "description": "A simple OOP program in Javascript",
   "main": "class.js",
   "scripts": {
-    "test": "mocha test/classTest.js"
+    "test": "mocha test/test.js"
   },
   "repository": {
     "type": "git",

@@ -27,11 +27,11 @@ class Vehicle {
 
 class Car extends Vehicle {
 
-  get price() {
+  getprice() {
     console.log(this.carPrice());
   }
 
-  get details() {
+  getdetails() {
     console.log(this.vehicleDetails());
   }
 
@@ -47,6 +47,4 @@ class Car extends Vehicle {
 const ride = new Car(40, 'Mercedes', 8000, 'Linkin Park', 2006, 'Old');
 console.log(ride.details);
 
-
-module.exports = { Vehicle };
 module.exports = { Car };
