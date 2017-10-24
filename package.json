@@ -1,0 +1,24 @@
+{
+  "name": "oop-javascript",
+  "version": "1.0.0",
+  "description": "A simple OOP program in Javascript",
+  "main": "class.js",
+  "scripts": {
+    "test": "mocha test/classTest.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Billmike/oop-javascript.git"
+  },
+  "keywords": [],
+  "author": "Bill Michael <billmike1994@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Billmike/oop-javascript/issues"
+  },
+  "homepage": "https://github.com/Billmike/oop-javascript#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
+  }
+}

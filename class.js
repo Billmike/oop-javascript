@@ -1,57 +1,52 @@
-// Simple Java OOP program that creates a simple Bio of a user
 class Vehicle {
-  constructor(numberOfWheels, brand, milesCovered, model, yearManufacutured, soldOn) {
+  constructor(numberOfWheels, brand, milesCovered, model, yearMade, status) {
+    this._numberOfWheels = numberOfWheels;
+    this._brand = brand;
+    this._milesCovered = milesCovered;
+    this._model = model;
+    this._yearMade = yearMade;
+    this._status = status;
+  }
 
-    let _numberOfWheels = numberOfWheels;
-    let _brand = brand;
-    let _milesCovered = milesCovered;
-    let _model = model;
-    let _yearManufactured = yearManufacutured;
-    let _soldOn = soldOn;
+  get price() {
+    console.log( this.carPrice());
+  }
 
-    this.salePrice = () => {
-      if (_soldOn !== null) {
-        return 0;
-      }
-      else {
-        return 70000 * _numberOfWheels;
-      }
-    }
+  get details() {
+    console.log(this.vehicleDetails());
+  }
 
-    this.purchasePrice = () => {
-      if (_soldOn !== null) {
-        return 0;
-      }
-      else {
-        return _baseSaleCost - _milesCovered;
-      }
-    }
+  vehicleDetails() {
+    return this._brand + " with " + this._numberOfWheels + " and a milage limit of " + this._milesCovered;
+  }
 
-    class Car extends Vehicle {
-      constructor(numberOfWheels, brand, milesCovered, model, yearManufacutured, soldOn) {
-
-        let _numberOfWheels = numberOfWheels;
-        let _brand = brand;
-        let _milesCovered = milesCovered;
-        let _model = model;
-        let _yearManufactured = yearManufacutured;
-        let _soldOn = soldOn;
-        let _baseSaleCost = 1000000;
-         }
-    }
-
-    class Truck extends Vehicle {
-      constructor(numberOfWheels, brand, milesCovered, model, yearManufacutured, soldOn) {
-
-        let _numberOfWheels = numberOfWheels;
-        let _brand = brand;
-        let _milesCovered = milesCovered;
-        let _model = model;
-        let _yearManufactured = yearManufacutured;
-        let _soldOn = soldOn;
-        let _baseSaleCost = 5000000;
-      }
-    }
-    
+  carPrice () {
+    return this._yearMade * this._milesCovered;
   }
 }
+
+class Car extends Vehicle {
+
+  get price() {
+    console.log(this.carPrice());
+  }
+
+  get details() {
+    console.log(this.vehicleDetails());
+  }
+
+  vehicleDetails() {
+    return this._brand + " with " + this._numberOfWheels + " wheels"+ " and a milage limit of " + this._milesCovered;
+  }
+
+  carPrice() {
+    return this._numberOfWheels * this._milesCovered;
+  }
+}
+
+const ride = new Car(40, 'Mercedes', 8000, 'Linkin Park', 2006, 'Old');
+console.log(ride.details);
+
+
+module.exports = { Vehicle };
+module.exports = { Car };
